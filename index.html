@@ -1,5 +1,3 @@
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -312,12 +310,24 @@
       box-shadow: 0 4px 10px rgba(33, 150, 243, 0.2);
     }
     
-    .sword-dragon {
-      max-width: 350px;
+    .powered-by {
       margin-top: 30px;
-      opacity: 0.5;
-      filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.3));
-      animation: float 6s ease-in-out infinite;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-align: center;
+      animation: float 4s ease-in-out infinite;
+      text-shadow: 0 0 8px rgba(33, 150, 243, 0.3);
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: rgba(33, 150, 243, 0.05);
+      border: 1px solid rgba(33, 150, 243, 0.1);
+    }
+    
+    .powered-by strong {
+      color: var(--primary-light);
+      font-weight: 400;
     }
     
     .notification {
@@ -409,7 +419,7 @@
     
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-15px); }
     }
     
     @keyframes wavePulse {
@@ -445,6 +455,10 @@
       .payment-card {
         padding: 20px 15px;
       }
+      
+      .powered-by {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -462,7 +476,7 @@
         <img class="profile-pic" src="Logo1.jpg" alt="Mahmoud Sameh">
       </div>
       <h1>Mahmoud Sameh</h1>
-      <div class="title"> المدير العام</div>
+      <div class="title">مدير العام</div>
     </div>
     
     <div class="social-links">
@@ -509,8 +523,8 @@
       </a>
     </div>
     
-    <!-- سيتم استخدام صورة التنين الأصلية -->
-    <img class="sword-dragon" src="sword-dragon.svg" alt="Sword Dragon Design">
+    <!-- تذييل Powered by mohand مع تحريكه لأعلى وأسفل -->
+    <div class="powered-by">Powered by <strong>mohand</strong></div>
   </div>
   
   <div class="notification" id="notification">تم نسخ معلومات الحساب بنجاح!</div>
