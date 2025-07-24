@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmoud Sameh | Flex Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+     /* خلفية سوداء متدرجة متحركة مع نجوم ودخان */ body { background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000); background-size: 400% 400%; animation: gradientMove 15s ease infinite; color: #fff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; overflow-x: hidden; position: relative; }
+
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+/* حاوية النجوم */ .stars { position: fixed; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+.star { position: absolute; width: 2px; height: 2px; background: white; border-radius: 50%; animation: twinkle 3s infinite ease-in-out; }
+
+@keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+
+/* تأثير دخان متحرك شفاف */ .smoke { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://i.ibb.co/BZKkpk1/smoke.gif') repeat; opacity: 0.05; z-index: 1; pointer-events: none; }
+
+.container { position: relative; z-index: 2; max-width: 800px; margin: auto; background: rgba(0, 0, 0, 0.85); border-radius: 20px; box-shadow: 0 0 20px rgba(255, 215, 0, 0.15); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); animation: fadeInUp 1s ease forwards; opacity: 0; }
+
+@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
+
+.header { text-align: center; padding: 30px; background: rgba(20, 20, 20, 0.9); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+
+.logo { width: 60px; margin-bottom: 15px; animation: pulse 4s infinite; }
+
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+.profile-container { position: relative; display: inline-block; }
+
+.profile-pic { width: 120px; height: 120px; border-radius: 50%; border: 3px solid gold; transition: transform 0.3s; }
+
+.profile-pic:hover { transform: scale(1.1); }
+
+.online-status { position: absolute; bottom: 10px; right: 10px; background: limegreen; width: 15px; height: 15px; border-radius: 50%; border: 2px solid #000; }
+
+h1 { margin: 10px 0 5px; font-size: 28px; font-weight: 700; }
+
+.tagline { font-size: 14px; color: #aaa; }
+
+.social-section, .payment-section { padding: 30px; background: rgba(15, 15, 15, 0.8); animation: fadeIn 2s ease forwards; opacity: 0; animation-delay: 0.5s; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+.section-title { font-size: 22px; font-weight: 600; margin-bottom: 20px; border-left: 4px solid gold; padding-left: 10px; }
+
+.social-links { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; }
+
+.social-link { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 12px; text-decoration: none; color: #fff; display: flex; align-items: center; flex: 1 1 45%; transition: 0.3s; }
+
+.social-link i { font-size: 24px; margin-right: 12px; color: gold; }
+
+.social-link:hover { background: rgba(255, 215, 0, 0.1); transform: translateY(-3px); box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); }
+
+.payment-info { background: rgba(10, 10, 10, 0.85); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 20px; }
+
+.payment-row { display: flex; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap; }
+
+.payment-label { font-weight: 600; color: #ccc; flex: 1 1 40%; }
+
+.payment-value { flex: 1 1 55%; display: flex; justify-content: space-between; align-items: center; word-break: break-word; }
+
+.copy-btn { background: transparent; border: 1px solid #666; color: gold; padding: 3px 8px; border-radius: 5px; cursor: pointer; margin-left: 10px; transition: 0.2s; }
+
+.copy-btn:hover { background: rgba(255, 215, 0, 0.1); transform: scale(1.05); }
+
+.footer { text-align: center; padding: 15px; font-size: 0.9rem; background: rgba(10, 10, 10, 0.9); color: rgba(255, 255, 255, 0.6); border-top: 1px solid rgba(255, 255, 255, 0.05); }
+
+
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="smoke"></div>  <div class="container">
+    <div class="header">
+      <img class="logo" src="logo.jpg" alt="Flex Logo">
+      <div class="profile-container">
+        <img class="profile-pic" src="Logo1.jpg" alt="Mahmoud Sameh">
+        <div class="online-status"></div>
+      </div>
+      <h1>Mahmoud Sameh</h1>
+      <div class="tagline">Digital Solutions Expert</div>
+    </div><div class="social-section">
+  <h2 class="section-title">Connect With Me</h2>
+  <div class="social-links">
+    <a href="https://www.facebook.com/share/16aHtvn1Au/" target="_blank" class="social-link">
+      <i class="fab fa-facebook-f"></i>
+      <div class="text">
+        <div class="title">Facebook</div>
+        <div class="subtitle">Follow for updates</div>
+      </div>
+    </a>
+    <a href="https://www.instagram.com/mahmoudsameh151?igsh=MWxpd2YzdGJ5cmhpeQ==" target="_blank" class="social-link">
+      <i class="fab fa-instagram"></i>
+      <div class="text">
+        <div class="title">Instagram</div>
+        <div class="subtitle">Daily content & stories</div>
+      </div>
+    </a>
+    <a href="https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI" target="_blank" class="social-link">
+      <i class="fas fa-wallet"></i>
+      <div class="text">
+        <div class="title">InstaPay</div>
+        <div class="subtitle">Quick & secure payments</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="social-links">
+    <a href="https://wa.me/201558218556" target="_blank" class="social-link">
+      <i class="fab fa-whatsapp"></i>
+      <div class="text">
+        <div class="title">WhatsApp 1</div>
+        <div class="subtitle">Primary Contact</div>
+      </div>
+    </a>
+    <a href="https://wa.me/201140520653" target="_blank" class="social-link">
+      <i class="fab fa-whatsapp"></i>
+      <div class="text">
+        <div class="title">WhatsApp 2</div>
+        <div class="subtitle">Secondary Contact</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="payment-section">
+  <h2 class="section-title">Payment Information</h2>
+  <div class="payment-info">
+    <div class="payment-row">
+      <div class="payment-label">InstaPay Link:</div>
+      <div class="payment-value">
+        https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI
+        <button class="copy-btn" onclick="copyToClipboard('https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI')">
+          <i class="fas fa-copy"></i>
+        </button>
+      </div>
+    </div>
+    <div class="payment-row">
+      <div class="payment-label">Account Name:</div>
+      <div class="payment-value">
+        Mahmoud Sameh Hassan
+        <button class="copy-btn" onclick="copyToClipboard('Mahmoud Sameh Hassan')">
+          <i class="fas fa-copy"></i>
+        </button>
+      </div>
+    </div>
+    <div class="payment-row">
+      <div class="payment-label">Phone Number:</div>
+      <div class="payment-value">
+        +20 155 821 8556
+        <button class="copy-btn" onclick="copyToClipboard('+201558218556')">
+          <i class="fas fa-copy"></i>
+        </button>
+      </div>
+    </div>
+    <div class="payment-row">
+      <div class="payment-label">Bank Name:</div>
+      <div class="payment-value">National Bank of Egypt</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>© 2025 Mahmoud Sameh. All Rights Reserved.</p>
+  <br>
+  <p>Powered by Mohand</p>
+</div>
+
+  </div>  <script>
+    function createStars() {
+      const stars = document.getElementById('stars');
+      for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        stars.appendChild(star);
+      }
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        btn.style.background = 'rgba(76, 175, 80, 0.3)';
+        btn.style.borderColor = '#4CAF50';
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+        }, 2000);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      createStars();
+    });
+  </script></body>
+</html>
