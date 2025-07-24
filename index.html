@@ -1,203 +1,515 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahmoud Sameh | Flex Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Mahmoud Sameh | فليكس</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-     /* خلفية سوداء متدرجة متحركة مع نجوم ودخان */ body { background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #000); background-size: 400% 400%; animation: gradientMove 15s ease infinite; color: #fff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; overflow-x: hidden; position: relative; }
-
-@keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-
-/* حاوية النجوم */ .stars { position: fixed; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-
-.star { position: absolute; width: 2px; height: 2px; background: white; border-radius: 50%; animation: twinkle 3s infinite ease-in-out; }
-
-@keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
-
-/* تأثير دخان متحرك شفاف */ .smoke { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://i.ibb.co/BZKkpk1/smoke.gif') repeat; opacity: 0.05; z-index: 1; pointer-events: none; }
-
-.container { position: relative; z-index: 2; max-width: 800px; margin: auto; background: rgba(0, 0, 0, 0.85); border-radius: 20px; box-shadow: 0 0 20px rgba(255, 215, 0, 0.15); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.05); animation: fadeInUp 1s ease forwards; opacity: 0; }
-
-@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(30px); } 100% { opacity: 1; transform: translateY(0); } }
-
-.header { text-align: center; padding: 30px; background: rgba(20, 20, 20, 0.9); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-
-.logo { width: 60px; margin-bottom: 15px; animation: pulse 4s infinite; }
-
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-
-.profile-container { position: relative; display: inline-block; }
-
-.profile-pic { width: 120px; height: 120px; border-radius: 50%; border: 3px solid gold; transition: transform 0.3s; }
-
-.profile-pic:hover { transform: scale(1.1); }
-
-.online-status { position: absolute; bottom: 10px; right: 10px; background: limegreen; width: 15px; height: 15px; border-radius: 50%; border: 2px solid #000; }
-
-h1 { margin: 10px 0 5px; font-size: 28px; font-weight: 700; }
-
-.tagline { font-size: 14px; color: #aaa; }
-
-.social-section, .payment-section { padding: 30px; background: rgba(15, 15, 15, 0.8); animation: fadeIn 2s ease forwards; opacity: 0; animation-delay: 0.5s; }
-
-@keyframes fadeIn { to { opacity: 1; } }
-
-.section-title { font-size: 22px; font-weight: 600; margin-bottom: 20px; border-left: 4px solid gold; padding-left: 10px; }
-
-.social-links { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; }
-
-.social-link { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.05); padding: 10px 15px; border-radius: 12px; text-decoration: none; color: #fff; display: flex; align-items: center; flex: 1 1 45%; transition: 0.3s; }
-
-.social-link i { font-size: 24px; margin-right: 12px; color: gold; }
-
-.social-link:hover { background: rgba(255, 215, 0, 0.1); transform: translateY(-3px); box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2); }
-
-.payment-info { background: rgba(10, 10, 10, 0.85); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 20px; }
-
-.payment-row { display: flex; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap; }
-
-.payment-label { font-weight: 600; color: #ccc; flex: 1 1 40%; }
-
-.payment-value { flex: 1 1 55%; display: flex; justify-content: space-between; align-items: center; word-break: break-word; }
-
-.copy-btn { background: transparent; border: 1px solid #666; color: gold; padding: 3px 8px; border-radius: 5px; cursor: pointer; margin-left: 10px; transition: 0.2s; }
-
-.copy-btn:hover { background: rgba(255, 215, 0, 0.1); transform: scale(1.05); }
-
-.footer { text-align: center; padding: 15px; font-size: 0.9rem; background: rgba(10, 10, 10, 0.9); color: rgba(255, 255, 255, 0.6); border-top: 1px solid rgba(255, 255, 255, 0.05); }
-
-
+    :root {
+      --primary: #ffc107;
+      --primary-dark: #e0a800;
+      --dark: #121212;
+      --darker: #0a0a0a;
+      --gray: #2a2a2a;
+      --light-gray: #444;
+      --white: #fff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Tajawal', sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--darker), var(--dark));
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 193, 7, 0.05) 0%, transparent 20%);
+      z-index: -1;
+    }
+    
+    .container {
+      max-width: 800px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      background: rgba(18, 18, 18, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 193, 7, 0.2);
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite, glow 3s infinite alternate;
+      filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.5));
+    }
+    
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .profile-pic-container {
+      position: relative;
+      margin-bottom: 15px;
+    }
+    
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+    
+    .profile-pic-container::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+      border: 2px solid var(--primary);
+      opacity: 0.5;
+      animation: pulse 2s infinite;
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+      position: relative;
+      background: linear-gradient(45deg, var(--primary), #ffeb3b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .title {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 25px;
+      text-align: center;
+      padding: 8px 20px;
+      background: rgba(255, 193, 7, 0.1);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 193, 7, 0.3);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gray), var(--dark));
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(255, 193, 7, 0.3);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .social-links a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 193, 7, 0.1), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-8px);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--darker);
+      box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+    }
+    
+    .social-links a:hover::before {
+      transform: translateX(100%);
+    }
+    
+    .social-links a span {
+      position: absolute;
+      bottom: -25px;
+      font-size: 0.8rem;
+      color: var(--white);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+    }
+    
+    .social-links a:hover span {
+      opacity: 1;
+    }
+    
+    .whatsapp-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    
+    .whatsapp-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      padding: 14px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(18, 140, 126, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      animation: pulseGreen 2s infinite;
+    }
+    
+    .whatsapp-links a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(18, 140, 126, 0.5);
+      background: linear-gradient(135deg, #1ebe5d, #0d7a6d);
+    }
+    
+    .whatsapp-links a i {
+      font-size: 1.4rem;
+    }
+    
+    .payment-card {
+      background: linear-gradient(135deg, rgba(42, 42, 42, 0.8), rgba(26, 26, 26, 0.9));
+      border-radius: 15px;
+      padding: 25px;
+      margin: 25px 0;
+      width: 100%;
+      max-width: 500px;
+      border: 1px solid rgba(255, 193, 7, 0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+      animation: slideIn 0.8s ease-out;
+    }
+    
+    .payment-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), #ffeb3b);
+    }
+    
+    .payment-card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1.8rem;
+    }
+    
+    .payment-info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 15px;
+      font-size: 1.1rem;
+      padding: 10px;
+    }
+    
+    .payment-info .label {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    .payment-info .value {
+      color: var(--white);
+      word-break: break-all;
+    }
+    
+    .copy-btn {
+      display: block;
+      margin: 20px auto 0;
+      background: rgba(255, 193, 7, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(255, 193, 7, 0.3);
+      padding: 8px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 700;
+    }
+    
+    .copy-btn:hover {
+      background: rgba(255, 193, 7, 0.3);
+      transform: translateY(-3px);
+    }
+    
+    .sword-dragon {
+      max-width: 350px;
+      margin-top: 30px;
+      opacity: 0.5;
+      filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.3));
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 25px;
+      background: var(--primary);
+      color: var(--darker);
+      border-radius: 10px;
+      font-weight: 700;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transform: translateX(150%);
+      transition: transform 0.4s ease;
+      z-index: 1000;
+    }
+    
+    .notification.show {
+      transform: translateX(0);
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    @keyframes glow {
+      0% { filter: drop-shadow(0 0 5px rgba(255, 193, 7, 0.3)); }
+      100% { filter: drop-shadow(0 0 15px rgba(255, 193, 7, 0.7)); }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      50% { transform: scale(1); opacity: 0.3; }
+      100% { transform: scale(0.95); opacity: 0.7; }
+    }
+    
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 15px;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+      }
+      
+      .social-links a {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+      
+      .whatsapp-links a {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+      }
+      
+      .payment-card {
+        padding: 20px 15px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="stars" id="stars"></div>
-  <div class="smoke"></div>  <div class="container">
-    <div class="header">
-      <img class="logo" src="logo.jpg" alt="Flex Logo">
-      <div class="profile-container">
+  <div class="container">
+    <img class="logo" src="logo.jpg" alt="Flex Logo">
+    
+    <div class="profile-section">
+      <div class="profile-pic-container">
         <img class="profile-pic" src="Logo1.jpg" alt="Mahmoud Sameh">
-        <div class="online-status"></div>
       </div>
       <h1>Mahmoud Sameh</h1>
-      <div class="tagline">Digital Solutions Expert</div>
-    </div><div class="social-section">
-  <h2 class="section-title">Connect With Me</h2>
-  <div class="social-links">
-    <a href="https://www.facebook.com/share/16aHtvn1Au/" target="_blank" class="social-link">
-      <i class="fab fa-facebook-f"></i>
-      <div class="text">
-        <div class="title">Facebook</div>
-        <div class="subtitle">Follow for updates</div>
+      <div class="title"></div></div>
+    </div>
+    
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/16aHtvn1Au/" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/mahmoudsameh151?igsh=MWxpd2YzdGJ5cmhpeQ==" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+      <a href="https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI" target="_blank">
+        <i class="fas fa-wallet"></i>
+        <span>InstaPay</span>
+      </a>
+    </div>
+    
+    <div class="payment-card">
+      <h2><i class="fas fa-credit-card"></i> معلومات الدفع</h2>
+      <div class="payment-info">
+        <div class="label">الاسم:</div>
+        <div class="value">Mahmoud Sameh Hassan</div>
+        
+        <div class="label">رقم الحساب:</div>
+        <div class="value">EG1234567890123456789012</div>
+        
+        <div class="label">اسم البنك:</div>
+        <div class="value">QNB Alahli</div>
+        
+        <div class="label">طريقة الدفع:</div>
+        <div class="value">InstaPay</div>
       </div>
-    </a>
-    <a href="https://www.instagram.com/mahmoudsameh151?igsh=MWxpd2YzdGJ5cmhpeQ==" target="_blank" class="social-link">
-      <i class="fab fa-instagram"></i>
-      <div class="text">
-        <div class="title">Instagram</div>
-        <div class="subtitle">Daily content & stories</div>
-      </div>
-    </a>
-    <a href="https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI" target="_blank" class="social-link">
-      <i class="fas fa-wallet"></i>
-      <div class="text">
-        <div class="title">InstaPay</div>
-        <div class="subtitle">Quick & secure payments</div>
-      </div>
-    </a>
+      <button class="copy-btn" onclick="copyAccountInfo()">نسخ معلومات الحساب</button>
+    </div>
+    
+    <div class="whatsapp-links">
+      <a href="https://wa.me/201558218556" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        WhatsApp 1
+      </a>
+      <a href="https://wa.me/201140520653" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        WhatsApp 2
+      </a>
+    </div>
+    
+    
   </div>
+  
+  <div class="notification" id="notification">تم نسخ معلومات الحساب بنجاح!</div>
 
-  <div class="social-links">
-    <a href="https://wa.me/201558218556" target="_blank" class="social-link">
-      <i class="fab fa-whatsapp"></i>
-      <div class="text">
-        <div class="title">WhatsApp 1</div>
-        <div class="subtitle">Primary Contact</div>
-      </div>
-    </a>
-    <a href="https://wa.me/201140520653" target="_blank" class="social-link">
-      <i class="fab fa-whatsapp"></i>
-      <div class="text">
-        <div class="title">WhatsApp 2</div>
-        <div class="subtitle">Secondary Contact</div>
-      </div>
-    </a>
-  </div>
-</div>
-
-<div class="payment-section">
-  <h2 class="section-title">Payment Information</h2>
-  <div class="payment-info">
-    <div class="payment-row">
-      <div class="payment-label">InstaPay Link:</div>
-      <div class="payment-value">
-        https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI
-        <button class="copy-btn" onclick="copyToClipboard('https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI')">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-    <div class="payment-row">
-      <div class="payment-label">Account Name:</div>
-      <div class="payment-value">
-        Mahmoud Sameh Hassan
-        <button class="copy-btn" onclick="copyToClipboard('Mahmoud Sameh Hassan')">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-    <div class="payment-row">
-      <div class="payment-label">Phone Number:</div>
-      <div class="payment-value">
-        +20 155 821 8556
-        <button class="copy-btn" onclick="copyToClipboard('+201558218556')">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-    </div>
-    <div class="payment-row">
-      <div class="payment-label">Bank Name:</div>
-      <div class="payment-value">National Bank of Egypt</div>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <p>© 2025 Mahmoud Sameh. All Rights Reserved.</p>
-  <br>
-  <p>Powered by Mohand</p>
-</div>
-
-  </div>  <script>
-    function createStars() {
-      const stars = document.getElementById('stars');
-      for (let i = 0; i < 100; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        stars.appendChild(star);
-      }
-    }
-
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = event.currentTarget;
-        const originalHTML = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        btn.style.background = 'rgba(76, 175, 80, 0.3)';
-        btn.style.borderColor = '#4CAF50';
-        setTimeout(() => {
-          btn.innerHTML = originalHTML;
-          btn.style.background = '';
-          btn.style.borderColor = '';
-        }, 2000);
+  <script>
+    // Animation for elements on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.social-links a, .payment-card, .whatsapp-links a').forEach(el => {
+      observer.observe(el);
+    });
+    
+    // Copy account info function
+    function copyAccountInfo() {
+      const accountInfo = `الاسم: Mahmoud Sameh Hassan
+رقم الحساب: EG1234567890123456789012
+اسم البنك: QNB Alahli
+طريقة الدفع: InstaPay`;
+      
+      navigator.clipboard.writeText(accountInfo).then(() => {
+        showNotification();
       });
     }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      createStars();
+    
+    // Show notification
+    function showNotification() {
+      const notification = document.getElementById('notification');
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+    
+    // Add hover effect to profile picture
+    const profilePic = document.querySelector('.profile-pic');
+    profilePic.addEventListener('mouseover', () => {
+      profilePic.style.transform = 'scale(1.05)';
+      profilePic.style.boxShadow = '0 0 30px rgba(255, 193, 7, 0.5)';
     });
-  </script></body>
-</html>
+    
+    profilePic.addEventListener('mouseout', () => {
+      profilePic.style.transform = 'scale(1)';
+      profilePic.style.boxShadow = '0 0 20px rgba(255, 193, 7, 0.3)';
+    });
+  </script>
+</body>
+  </html>
