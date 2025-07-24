@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #ffc107;
-      --primary-dark: #e0a800;
+      --primary: #2196F3;
+      --primary-dark: #1976D2;
+      --primary-light: #64B5F6;
       --dark: #121212;
       --darker: #0a0a0a;
       --gray: #2a2a2a;
@@ -45,8 +46,8 @@
       width: 100%;
       height: 100%;
       background: 
-        radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.05) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(255, 193, 7, 0.05) 0%, transparent 20%);
+        radial-gradient(circle at 10% 20%, rgba(33, 150, 243, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(33, 150, 243, 0.05) 0%, transparent 20%);
       z-index: -1;
     }
     
@@ -61,7 +62,7 @@
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 193, 7, 0.2);
+      border: 1px solid rgba(33, 150, 243, 0.2);
       position: relative;
       z-index: 1;
       animation: fadeIn 1s ease-out;
@@ -71,7 +72,7 @@
       width: 150px;
       margin-bottom: 20px;
       animation: bounce 2s infinite, glow 3s infinite alternate;
-      filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.5));
+      filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.5));
     }
     
     .profile-section {
@@ -93,7 +94,7 @@
       border-radius: 50%;
       border: 4px solid var(--primary);
       object-fit: cover;
-      box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+      box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
       transition: transform 0.3s ease;
     }
     
@@ -117,9 +118,9 @@
     h1 {
       font-size: 2.8rem;
       margin-bottom: 10px;
-      text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+      text-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
       position: relative;
-      background: linear-gradient(45deg, var(--primary), #ffeb3b);
+      background: linear-gradient(45deg, var(--primary), #64B5F6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -132,9 +133,9 @@
       margin-bottom: 25px;
       text-align: center;
       padding: 8px 20px;
-      background: rgba(255, 193, 7, 0.1);
+      background: rgba(33, 150, 243, 0.1);
       border-radius: 30px;
-      border: 1px solid rgba(255, 193, 7, 0.3);
+      border: 1px solid rgba(33, 150, 243, 0.3);
     }
     
     .social-links {
@@ -158,7 +159,7 @@
       text-decoration: none;
       font-size: 1.8rem;
       transition: all 0.3s ease;
-      border: 2px solid rgba(255, 193, 7, 0.3);
+      border: 2px solid rgba(33, 150, 243, 0.3);
       position: relative;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -171,7 +172,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, rgba(255, 193, 7, 0.1), transparent);
+      background: linear-gradient(45deg, rgba(33, 150, 243, 0.1), transparent);
       transform: translateX(-100%);
       transition: transform 0.4s ease;
     }
@@ -180,7 +181,7 @@
       transform: translateY(-8px);
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: var(--darker);
-      box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+      box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
     }
     
     .social-links a:hover::before {
@@ -214,22 +215,22 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
       padding: 14px 25px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 700;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(18, 140, 126, 0.3);
+      box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
       border: 2px solid rgba(255, 255, 255, 0.1);
-      animation: pulseGreen 2s infinite;
+      animation: pulseBlue 2s infinite;
     }
     
     .whatsapp-links a:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(18, 140, 126, 0.5);
-      background: linear-gradient(135deg, #1ebe5d, #0d7a6d);
+      box-shadow: 0 8px 20px rgba(33, 150, 243, 0.5);
+      background: linear-gradient(135deg, var(--primary-dark), #1565C0);
     }
     
     .whatsapp-links a i {
@@ -243,7 +244,7 @@
       margin: 25px 0;
       width: 100%;
       max-width: 500px;
-      border: 1px solid rgba(255, 193, 7, 0.3);
+      border: 1px solid rgba(33, 150, 243, 0.3);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
       position: relative;
       overflow: hidden;
@@ -257,7 +258,7 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, var(--primary), #ffeb3b);
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
     }
     
     .payment-card h2 {
@@ -292,9 +293,9 @@
     .copy-btn {
       display: block;
       margin: 20px auto 0;
-      background: rgba(255, 193, 7, 0.15);
+      background: rgba(33, 150, 243, 0.15);
       color: var(--primary);
-      border: 1px solid rgba(255, 193, 7, 0.3);
+      border: 1px solid rgba(33, 150, 243, 0.3);
       padding: 8px 20px;
       border-radius: 30px;
       cursor: pointer;
@@ -303,15 +304,16 @@
     }
     
     .copy-btn:hover {
-      background: rgba(255, 193, 7, 0.3);
+      background: rgba(33, 150, 243, 0.3);
       transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(33, 150, 243, 0.2);
     }
     
     .sword-dragon {
       max-width: 350px;
       margin-top: 30px;
       opacity: 0.5;
-      filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.3));
+      filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.3));
       animation: float 6s ease-in-out infinite;
     }
     
@@ -334,14 +336,50 @@
       transform: translateX(0);
     }
     
+    .water-wave {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(33, 150, 243, 0.3), transparent 70%);
+      filter: blur(15px);
+      z-index: 0;
+      opacity: 0.7;
+      animation: wavePulse 6s infinite alternate;
+    }
+    
+    .water-wave:nth-child(1) {
+      top: 10%;
+      left: 10%;
+      width: 150px;
+      height: 150px;
+      animation-delay: -1s;
+    }
+    
+    .water-wave:nth-child(2) {
+      bottom: 15%;
+      right: 15%;
+      width: 180px;
+      height: 180px;
+      animation-delay: -3s;
+    }
+    
+    .water-wave:nth-child(3) {
+      top: 40%;
+      right: 5%;
+      width: 100px;
+      height: 100px;
+      animation-delay: -5s;
+    }
+    
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
     }
     
     @keyframes glow {
-      0% { filter: drop-shadow(0 0 5px rgba(255, 193, 7, 0.3)); }
-      100% { filter: drop-shadow(0 0 15px rgba(255, 193, 7, 0.7)); }
+      0% { filter: drop-shadow(0 0 5px rgba(33, 150, 243, 0.3)); }
+      100% { filter: drop-shadow(0 0 15px rgba(33, 150, 243, 0.7)); }
     }
     
     @keyframes pulse {
@@ -350,10 +388,10 @@
       100% { transform: scale(0.95); opacity: 0.7; }
     }
     
-    @keyframes pulseGreen {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-      70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    @keyframes pulseBlue {
+      0% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(33, 150, 243, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0); }
     }
     
     @keyframes fadeIn {
@@ -369,6 +407,11 @@
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes wavePulse {
+      0% { transform: scale(0.8); opacity: 0.3; }
+      100% { transform: scale(1.2); opacity: 0.6; }
     }
     
     @media (max-width: 600px) {
@@ -403,15 +446,19 @@
   </style>
 </head>
 <body>
+  <div class="water-wave"></div>
+  <div class="water-wave"></div>
+  <div class="water-wave"></div>
+  
   <div class="container">
-    <img class="logo" src="logo.jpg" alt="Flex Logo">
+    <img class="logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSI0OS45OSUiIHkxPSIwJSIgeDI9IjQ5Ljk5JSIgeTI9Ijk5Ljk4JSI+PHN0b3Agc3RvcC1jb2xvcj0iIzIxOTZGMiIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiMxOTc2RDIiIG9mZnNldD0iMTAwJSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0iTTEyNSAzMEM1Ny4zMDMgMzAgMCA4Ny4zMDMgMCAxNTUuMDA1YzAgNjcuNjkgNTcuMzAzIDEyNC45OTUgMTI1IDEyNC45OTVzMTI1LTU3LjMwNSAxMjUtMTI0Ljk5NUMyNTAgODcuMzAzIDE5Mi42OTcgMzAgMTI1IDMweiIgZmlsbD0idXJsKCNnKSIgb3BhY2l0eT0iLjgiLz48cGF0aCBkPSJNMTI1IDM4LjYzNmMtNjQuMTU4IDAtMTE2LjM2NCA1Mi4yMDYtMTE2LjM2NCAxMTYuMzY0IDAgNjQuMTU3IDUyLjIwNiAxMTYuMzY0IDExNi4zNjQgMTE2LjM2NCA2NC4xNTggMCAxMTYuMzY0LTUyLjIwNyAxMTYuMzY0LTExNi4zNjQgMC02NC4xNTgtNTIuMjA2LTExNi4zNjQtMTE2LjM2NC0xMTYuMzY0eiIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGQ9Ik0xNDcuODI1IDEwNi42OTdjLTIuNTQzLS4wMTItNS4wODguMzU1LTcuNDg0IDEuMTA0LTMuODA3IDEuMTc1LTcuMjU0IDMuMzA4LTEwLjA0IDYuMjY1LTIuNzg2IDIuOTU4LTQuODQzIDYuNjQ1LTUuOTk2IDEwLjc0NC0xLjE1MyA0LjEtMS4zNjggOC40ODMtLjYzIDEyLjY0My43MzggNC4xNiAyLjQwMyA4LjA1IDUuMDQxIDExLjI5NSAyLjYzOCAzLjI0NSA2LjA5NSA1Ljc4NiA5Ljk5IDcuMzA1IDMuODk2IDEuNTE5IDguMTMgMS44MjYgMTIuMTI1Ljg4NSA0LjAwMi0uOTQgNy42NjQtMy4yNTQgMTAuNTk1LTYuNTg1IDIuOTMtMy4zMyA0Ljk0LTcuNDc0IDUuODctMTEuODk1LjkzLTQuNDIyLjk4LTkuMDcuMTQxLTMzLjUyN2guMDAxYy0uNTY0LTIuNjYtMS43MDQtNS4xODUtMy4zNTUtNy4zNTItMS42NS0yLjE2OC0zLjc2Mi0zLjkxLTYuMTU0LTUuMDg3LTIuMzkyLTEuMTc4LTUuMDAyLTEuNzUzLTcuNjM1LTEuNjgzeiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=" alt="Flex Logo">
     
     <div class="profile-section">
       <div class="profile-pic-container">
-        <img class="profile-pic" src="Logo1.jpg" alt="Mahmoud Sameh">
+        <img class="profile-pic" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMxOTc2RDIiIG9mZnNldD0iMCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMjE5NkYyIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk4IiBmaWxsPSJ1cmwoI2EpIi8+PHBhdGggZD0iTTEwMCA0MGMtMzMuMTM3IDAtNjAgMjYuODYzLTYwIDYwczI2Ljg2MyA2MCA2MCA2MCA2MC0yNi44NjMgNjAtNjAtMjYuODYzLTYwLTYwLTYweiIgZmlsbD0iIzE0MjgzQyIvPjx0ZXh0IHg9IjEwMCIgeT0iMTIwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiPk1TPC90ZXh0Pjwvc3ZnPg==" alt="Mahmoud Sameh">
       </div>
       <h1>Mahmoud Sameh</h1>
-      <div class="title"></div></div>
+      <div class="title">مدير فليكس للخدمات المالية</div>
     </div>
     
     <div class="social-links">
@@ -458,7 +505,7 @@
       </a>
     </div>
     
-    
+    <img class="sword-dragon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNTAgMTUwIj48cGF0aCBkPSJNMzUgNTBjMTAtMjAgMjUtMjAgMzUgME0xMDAgNTBjMTAtMjAgMjUtMjAgMzUgME0xNjUgNTBjMTAtMjAgMjUtMjAgMzUgME0yMzAgNTBjMTAtMjAgMjUtMjAgMzUgME0yOTUgNTBjMTAtMjAgMjUtMjAgMzUgME0zMCA2MGMyMC0xMCA0MC0xMCA2MCAwTTE2MCA2MGMyMC0xMCA0MC0xMCA2MCAwTTI5MCA2MGMyMC0xMCA0MC0xMCA2MCAwTTAgODBjMTAtMTAgMzAtMTAgNDAgME03MCA4MGMxMC0xMCAzMC0xMCA0MCAwTTE0MCA4MGMxMC0xMCAzMC0xMCA0MCAwTTIxMCA4MGMxMC0xMCAzMC0xMCA0MCAwTTI4MCA4MGMxMC0xMCAzMC0xMCA0MCAwTTAgMTEwYzEwLTEwIDMwLTEwIDQwIDBNNzAgMTEwYzEwLTEwIDMwLTEwIDQwIDBNMTQwIDExMGMxMC0xMCAzMC0xMCA0MCBNMjEwIDExMGMxMC0xMCAzMC0xMCA0MCBNMjgwIDExMGMxMC0xMCAzMC0xMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjE5NkYyIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==" alt="Sword Dragon Design">
   </div>
   
   <div class="notification" id="notification">تم نسخ معلومات الحساب بنجاح!</div>
@@ -503,13 +550,19 @@
     const profilePic = document.querySelector('.profile-pic');
     profilePic.addEventListener('mouseover', () => {
       profilePic.style.transform = 'scale(1.05)';
-      profilePic.style.boxShadow = '0 0 30px rgba(255, 193, 7, 0.5)';
+      profilePic.style.boxShadow = '0 0 30px rgba(33, 150, 243, 0.5)';
     });
     
     profilePic.addEventListener('mouseout', () => {
       profilePic.style.transform = 'scale(1)';
-      profilePic.style.boxShadow = '0 0 20px rgba(255, 193, 7, 0.3)';
+      profilePic.style.boxShadow = '0 0 20px rgba(33, 150, 243, 0.3)';
+    });
+    
+    // Animate water waves
+    const waves = document.querySelectorAll('.water-wave');
+    waves.forEach((wave, index) => {
+      wave.style.animationDelay = `${index * 2}s`;
     });
   </script>
 </body>
-  </html>
+</html>
