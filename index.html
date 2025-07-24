@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -8,15 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #2196F3;
-      --primary-dark: #1976D2;
-      --primary-light: #64B5F6;
+      --primary: #ffc107;
+      --primary-dark: #e0a800;
       --dark: #121212;
       --darker: #0a0a0a;
       --gray: #2a2a2a;
       --light-gray: #444;
       --white: #fff;
-      --blue-gradient: linear-gradient(135deg, #2196F3, #0D47A1);
+      --powered-by: rgba(255, 255, 255, 0.5);
     }
     
     * {
@@ -47,9 +47,10 @@
       width: 100%;
       height: 100%;
       background: 
-        radial-gradient(circle at 10% 20%, rgba(33, 150, 243, 0.05) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(33, 150, 243, 0.05) 0%, transparent 20%);
+        radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 193, 7, 0.05) 0%, transparent 20%);
       z-index: -1;
+      animation: backgroundPulse 12s infinite alternate;
     }
     
     .container {
@@ -63,17 +64,29 @@
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(33, 150, 243, 0.2);
+      border: 1px solid rgba(255, 193, 7, 0.2);
       position: relative;
       z-index: 1;
       animation: fadeIn 1s ease-out;
+      overflow: hidden;
+    }
+    
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary), #ffeb3b, var(--primary));
+      animation: borderFlow 3s infinite linear;
     }
     
     .logo {
       width: 150px;
       margin-bottom: 20px;
       animation: bounce 2s infinite, glow 3s infinite alternate;
-      filter: drop-shadow(0 0 8px rgba(33, 150, 243, 0.5));
+      filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.5));
     }
     
     .profile-section {
@@ -82,11 +95,13 @@
       align-items: center;
       margin-bottom: 30px;
       position: relative;
+      text-align: center;
     }
     
     .profile-pic-container {
       position: relative;
       margin-bottom: 15px;
+      animation: floatProfile 5s ease-in-out infinite;
     }
     
     .profile-pic {
@@ -95,8 +110,9 @@
       border-radius: 50%;
       border: 4px solid var(--primary);
       object-fit: cover;
-      box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
       transition: transform 0.3s ease;
+      animation: borderPulse 3s infinite;
     }
     
     .profile-pic:hover {
@@ -119,13 +135,14 @@
     h1 {
       font-size: 2.8rem;
       margin-bottom: 10px;
-      text-shadow: 0 0 10px rgba(33, 150, 243, 0.5);
+      text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
       position: relative;
-      background: linear-gradient(45deg, var(--primary), #64B5F6);
+      background: linear-gradient(45deg, var(--primary), #ffeb3b);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       color: transparent;
+      animation: textGlow 2s infinite alternate;
     }
     
     .title {
@@ -134,9 +151,10 @@
       margin-bottom: 25px;
       text-align: center;
       padding: 8px 20px;
-      background: rgba(33, 150, 243, 0.1);
+      background: rgba(255, 193, 7, 0.1);
       border-radius: 30px;
-      border: 1px solid rgba(33, 150, 243, 0.3);
+      border: 1px solid rgba(255, 193, 7, 0.3);
+      animation: fadeIn 2s ease-out;
     }
     
     .social-links {
@@ -146,6 +164,7 @@
       gap: 20px;
       margin-bottom: 30px;
       width: 100%;
+      animation: slideIn 0.8s ease-out;
     }
     
     .social-links a {
@@ -160,10 +179,12 @@
       text-decoration: none;
       font-size: 1.8rem;
       transition: all 0.3s ease;
-      border: 2px solid rgba(33, 150, 243, 0.3);
+      border: 2px solid rgba(255, 193, 7, 0.3);
       position: relative;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: floatIcon 3s ease-in-out infinite;
+      animation-delay: calc(0.1s * var(--i));
     }
     
     .social-links a::before {
@@ -173,7 +194,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, rgba(33, 150, 243, 0.1), transparent);
+      background: linear-gradient(45deg, rgba(255, 193, 7, 0.1), transparent);
       transform: translateX(-100%);
       transition: transform 0.4s ease;
     }
@@ -182,7 +203,8 @@
       transform: translateY(-8px);
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: var(--darker);
-      box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+      box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+      animation-play-state: paused;
     }
     
     .social-links a:hover::before {
@@ -210,28 +232,46 @@
       gap: 15px;
       margin-bottom: 30px;
       width: 100%;
+      animation: fadeIn 1.5s ease-out;
     }
     
     .whatsapp-links a {
       display: flex;
       align-items: center;
       gap: 10px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      background: linear-gradient(135deg, #25D366, #128C7E);
       color: white;
       padding: 14px 25px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 700;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+      box-shadow: 0 5px 15px rgba(18, 140, 126, 0.3);
       border: 2px solid rgba(255, 255, 255, 0.1);
-      animation: pulseBlue 2s infinite;
+      animation: pulseGreen 2s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .whatsapp-links a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .whatsapp-links a:hover::before {
+      left: 100%;
     }
     
     .whatsapp-links a:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(33, 150, 243, 0.5);
-      background: linear-gradient(135deg, var(--primary-dark), #1565C0);
+      box-shadow: 0 8px 20px rgba(18, 140, 126, 0.5);
+      background: linear-gradient(135deg, #1ebe5d, #0d7a6d);
     }
     
     .whatsapp-links a i {
@@ -245,7 +285,7 @@
       margin: 25px 0;
       width: 100%;
       max-width: 500px;
-      border: 1px solid rgba(33, 150, 243, 0.3);
+      border: 1px solid rgba(255, 193, 7, 0.3);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
       position: relative;
       overflow: hidden;
@@ -259,7 +299,8 @@
       left: 0;
       width: 100%;
       height: 5px;
-      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      background: linear-gradient(90deg, var(--primary), #ffeb3b);
+      animation: borderFlow 3s infinite linear;
     }
     
     .payment-card h2 {
@@ -271,6 +312,7 @@
       justify-content: center;
       gap: 10px;
       font-size: 1.8rem;
+      animation: textGlow 2s infinite alternate;
     }
     
     .payment-info {
@@ -294,40 +336,45 @@
     .copy-btn {
       display: block;
       margin: 20px auto 0;
-      background: rgba(33, 150, 243, 0.15);
+      background: rgba(255, 193, 7, 0.15);
       color: var(--primary);
-      border: 1px solid rgba(33, 150, 243, 0.3);
+      border: 1px solid rgba(255, 193, 7, 0.3);
       padding: 8px 20px;
       border-radius: 30px;
       cursor: pointer;
       transition: all 0.3s ease;
       font-weight: 700;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .copy-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.2), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
     }
     
     .copy-btn:hover {
-      background: rgba(33, 150, 243, 0.3);
+      background: rgba(255, 193, 7, 0.3);
       transform: translateY(-3px);
-      box-shadow: 0 4px 10px rgba(33, 150, 243, 0.2);
     }
     
-    .powered-by {
+    .copy-btn:hover::before {
+      transform: translateX(100%);
+    }
+    
+    .sword-dragon {
+      max-width: 350px;
       margin-top: 30px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: 1px;
-      text-align: center;
-      animation: float 4s ease-in-out infinite;
-      text-shadow: 0 0 8px rgba(33, 150, 243, 0.3);
-      padding: 10px 20px;
-      border-radius: 30px;
-      background: rgba(33, 150, 243, 0.05);
-      border: 1px solid rgba(33, 150, 243, 0.1);
-    }
-    
-    .powered-by strong {
-      color: var(--primary-light);
-      font-weight: 400;
+      opacity: 0.5;
+      filter: drop-shadow(0 0 10px rgba(255, 193, 7, 0.3));
+      animation: float 6s ease-in-out infinite;
     }
     
     .notification {
@@ -349,50 +396,30 @@
       transform: translateX(0);
     }
     
-    .water-wave {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(33, 150, 243, 0.3), transparent 70%);
-      filter: blur(15px);
-      z-index: 0;
-      opacity: 0.7;
-      animation: wavePulse 6s infinite alternate;
+    .powered-by {
+      margin-top: 20px;
+      color: var(--powered-by);
+      font-size: 0.9rem;
+      text-align: center;
+      animation: floatFooter 3s ease-in-out infinite;
+      position: relative;
+      padding: 10px;
     }
     
-    .water-wave:nth-child(1) {
-      top: 10%;
-      left: 10%;
-      width: 150px;
-      height: 150px;
-      animation-delay: -1s;
+    .powered-by span {
+      color: rgba(255, 193, 7, 0.7);
+      font-weight: bold;
     }
     
-    .water-wave:nth-child(2) {
-      bottom: 15%;
-      right: 15%;
-      width: 180px;
-      height: 180px;
-      animation-delay: -3s;
-    }
-    
-    .water-wave:nth-child(3) {
-      top: 40%;
-      right: 5%;
-      width: 100px;
-      height: 100px;
-      animation-delay: -5s;
-    }
-    
+    /* Animations */
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
     }
     
     @keyframes glow {
-      0% { filter: drop-shadow(0 0 5px rgba(33, 150, 243, 0.3)); }
-      100% { filter: drop-shadow(0 0 15px rgba(33, 150, 243, 0.7)); }
+      0% { filter: drop-shadow(0 0 5px rgba(255, 193, 7, 0.3)); }
+      100% { filter: drop-shadow(0 0 15px rgba(255, 193, 7, 0.7)); }
     }
     
     @keyframes pulse {
@@ -401,10 +428,10 @@
       100% { transform: scale(0.95); opacity: 0.7; }
     }
     
-    @keyframes pulseBlue {
-      0% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0.4)); }
-      70% { box-shadow: 0 0 0 10px rgba(33, 150, 243, 0)); }
-      100% { box-shadow: 0 0 0 0 rgba(33, 150, 243, 0)); }
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
     
     @keyframes fadeIn {
@@ -419,12 +446,42 @@
     
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+      50% { transform: translateY(-20px); }
     }
     
-    @keyframes wavePulse {
-      0% { transform: scale(0.8); opacity: 0.3; }
-      100% { transform: scale(1.2); opacity: 0.6; }
+    @keyframes borderFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    
+    @keyframes textGlow {
+      0% { text-shadow: 0 0 5px rgba(255, 193, 7, 0.5); }
+      100% { text-shadow: 0 0 15px rgba(255, 193, 7, 0.8); }
+    }
+    
+    @keyframes backgroundPulse {
+      0% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+    
+    @keyframes floatProfile {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes borderPulse {
+      0%, 100% { box-shadow: 0 0 10px rgba(255, 193, 7, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.6); }
+    }
+    
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    
+    @keyframes floatFooter {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
     
     @media (max-width: 600px) {
@@ -455,20 +512,11 @@
       .payment-card {
         padding: 20px 15px;
       }
-      
-      .powered-by {
-        font-size: 1rem;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="water-wave"></div>
-  <div class="water-wave"></div>
-  <div class="water-wave"></div>
-  
   <div class="container">
-    <!-- سيتم استخدام الصور الأصلية كما هي -->
     <img class="logo" src="logo.jpg" alt="Flex Logo">
     
     <div class="profile-section">
@@ -476,21 +524,25 @@
         <img class="profile-pic" src="Logo1.jpg" alt="Mahmoud Sameh">
       </div>
       <h1>Mahmoud Sameh</h1>
-      <div class="title">مدير العام</div>
+      <div class="title"> مدير العام </div>
     </div>
     
     <div class="social-links">
-      <a href="https://www.facebook.com/share/16aHtvn1Au/" target="_blank">
+      <a href="https://www.facebook.com/share/16aHtvn1Au/" target="_blank" style="--i:1">
         <i class="fab fa-facebook-f"></i>
         <span>Facebook</span>
       </a>
-      <a href="https://www.instagram.com/mahmoudsameh151?igsh=MWxpd2YzdGJ5cmhpeQ==" target="_blank">
+      <a href="https://www.instagram.com/mahmoudsameh151?igsh=MWxpd2YzdGJ5cmhpeQ==" target="_blank" style="--i:2">
         <i class="fab fa-instagram"></i>
         <span>Instagram</span>
       </a>
-      <a href="https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI" target="_blank">
+      <a href="https://ipn.eg/S/mahmoud.hassan7550/instapay/2zOiLI" target="_blank" style="--i:3">
         <i class="fas fa-wallet"></i>
         <span>InstaPay</span>
+      </a>
+      <a href="#" target="_blank" style="--i:4">
+        <i class="fab fa-linkedin-in"></i>
+        <span>LinkedIn</span>
       </a>
     </div>
     
@@ -523,8 +575,7 @@
       </a>
     </div>
     
-    <!-- تذييل Powered by mohand مع تحريكه لأعلى وأسفل -->
-    <div class="powered-by">Powered by <strong>mohand</strong></div>
+    <div class="powered-by">Powered by <span>mohand</span></div>
   </div>
   
   <div class="notification" id="notification">تم نسخ معلومات الحساب بنجاح!</div>
@@ -567,23 +618,22 @@
     
     // Add hover effect to profile picture
     const profilePic = document.querySelector('.profile-pic');
-    if(profilePic) {
-      profilePic.addEventListener('mouseover', () => {
-        profilePic.style.transform = 'scale(1.05)';
-        profilePic.style.boxShadow = '0 0 30px rgba(33, 150, 243, 0.5)';
-      });
-      
-      profilePic.addEventListener('mouseout', () => {
-        profilePic.style.transform = 'scale(1)';
-        profilePic.style.boxShadow = '0 0 20px rgba(33, 150, 243, 0.3)';
-      });
-    }
+    profilePic.addEventListener('mouseover', () => {
+      profilePic.style.transform = 'scale(1.05)';
+      profilePic.style.boxShadow = '0 0 30px rgba(255, 193, 7, 0.5)';
+    });
     
-    // Animate water waves
-    const waves = document.querySelectorAll('.water-wave');
-    waves.forEach((wave, index) => {
-      wave.style.animationDelay = `${index * 2}s`;
+    profilePic.addEventListener('mouseout', () => {
+      profilePic.style.transform = 'scale(1)';
+      profilePic.style.boxShadow = '0 0 20px rgba(255, 193, 7, 0.3)';
+    });
+    
+    // Add animations for social icons
+    const socialIcons = document.querySelectorAll('.social-links a');
+    socialIcons.forEach((icon, index) => {
+      icon.style.setProperty('--i', index);
     });
   </script>
 </body>
 </html>
+```
